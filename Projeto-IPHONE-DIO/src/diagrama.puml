@@ -1,0 +1,44 @@
+@startuml
+!define INTERFACE <<interface>>
+
+interface Internet {
+    + exibirPagina(String url)
+    + adicionarNovaAba()
+    + atualizarPagina()
+}
+
+interface Musica {
+    + tocar()
+    + pausar()
+    + selecionarMusica(String musica)
+}
+
+interface Telefone {
+    + ligar(String numero)
+    + atender()
+    + iniciarCorreioVoz()
+}
+
+class Iphone {
+    + exibirPagina(String url)
+    + adicionarNovaAba()
+    + atualizarPagina()
+    + ligar(String numero)
+    + atender()
+    + iniciarCorreioVoz()
+    + tocar()
+    + pausar()
+    + selecionarMusica(String musica)
+}
+
+Iphone --|> Internet
+Iphone --|> Musica
+Iphone --|> Telefone
+
+class Main {
+    + main(String[] args)
+}
+
+Main --> Iphone : usa
+
+@enduml
